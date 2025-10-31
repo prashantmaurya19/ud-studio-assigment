@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Bungee+Outline&family=Nabla&family=Rubik+Moonrocks&display=swap");
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-hollow: "Bungee Outline", cursive;
+}
+
+.debug {
+  @apply outline-1 outline-amber-400 outline-solid;
+}
+
+/* Font classes */
+.font-hollow {
+  font-family: "Bungee Outline", cursive;
+}
+
+.font-nabla {
+  font-family: "Nabla", cursive;
+}
+
+.font-moonrocks {
+  font-family: "Rubik Moonrocks", cursive;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+}

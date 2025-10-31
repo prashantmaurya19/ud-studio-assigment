@@ -1,0 +1,42 @@
+{"google":{
+  "id": "116686678645029658074",
+  "displayName": "Prashant M",
+  "name": { "familyName": "M", "givenName": "Prashant" },
+  "photos": [
+    {
+      "value": "https://lh3.googleusercontent.com/a/ACg8ocJpFcVF9QG64cNGWP2YnBot1S9ILlhIh6Kbodx5BUqk1cqGBFxK=s96-c"
+    }
+  ],
+  "provider": "google",
+  "_raw": {
+      "sub": "116686678645029658074",
+      "name": "Prashant M",
+      "given_name": "Prashant",
+      "family_name": "M",
+      "picture": "https://lh3.googleusercontent.com/a/ACg8ocJpFcVF9QG64cNGWP2YnBot1S9ILlhIh6Kbodx5BUqk1cqGBFxK\\u003ds96-c"
+    },
+  "_json": {
+    "sub": "116686678645029658074",
+    "name": "Prashant M",
+    "given_name": "Prashant",
+    "family_name": "M",
+    "picture": "https://lh3.googleusercontent.com/a/ACg8ocJpFcVF9QG64cNGWP2YnBot1S9ILlhIh6Kbodx5BUqk1cqGBFxK=s96-c"
+  }
+},
+"github":{
+  "id": "72512013",
+  "nodeId": "MDQ6VXNlcjcyNTEyMDEz",
+  "displayName": "Prashant Maurya",
+  "username": "prashantmaurya19",
+  "profileUrl": "https://github.com/prashantmaurya19",
+  "photos": [ { value: "https://avatars.githubusercontent.com/u/72512013?v=4" } ],
+  "provider": "github",
+  "_raw": {"login":"prashantmaurya19","id":72512013,"node_id":"MDQ6VXNlcjcyNTEyMDEz","avatar_url":"https://avatars.githubusercontent.com/u/72512013?v=4","gravatar_id":"","url":"https://api.github.com/users/prashantmaurya19","html_url":"https://github.com/prashantmaurya19","followers_url":"https://api.github.com/users/prashantmaurya19/followers","following_url":"https://api.github.com/users/prashantmaurya19/following{/other_user}","gists_url":"https://api.github.com/users/prashantmaurya19/gists{/gist_id}","starred_url":"https://api.github.com/users/prashantmaurya19/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/prashantmaurya19/subscriptions","organizations_url":"https://api.github.com/users/prashantmaurya19/orgs","repos_url":"https://api.github.com/users/prashantmaurya19/repos","events_url":"https://api.github.com/users/prashantmaurya19/events{/privacy}","received_events_url":"https://api.github.com/users/prashantmaurya19/received_events","type":"User","user_view_type":"public","site_admin":false,"name":"Prashant Maurya","company":null,"blog":"","location":null,"email":null,"hireable":null,"bio":null,"twitter_username":null,"notification_email":null,"public_repos":7,"public_gists":0,"followers":0,"following":0,"created_at":"2020-10-07T15:05:46Z","updated_at":"2025-10-09T15:03:36Z"}",
+},
+"facebook":{
+  "id": "4195169914104278",
+  "displayName": "Suresh Aheer",
+  "provider": "facebook",
+  "_raw": "{"name":"Suresh Aheer","id":"4195169914104278"}",
+  "_json": { "name": "Suresh Aheer", id: "4195169914104278" }
+}}
