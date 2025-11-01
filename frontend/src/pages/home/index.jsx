@@ -20,7 +20,10 @@ const HomePage = () => {
     fetch("/api/user/isloging").then((d) => {
       if (d.status == 200) navigate("/search");
     });
-    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+    if (
+      localStorage.getItem("dark") !== "false" &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches
+    ) {
       setDarkMode(true);
       document.documentElement.classList.add("dark");
     }

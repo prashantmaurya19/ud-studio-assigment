@@ -8,6 +8,12 @@ const NavbarSearchBar = () => {
     )}>
       <div className="relative">
         <input
+          onKeyUp={(e) => {
+            console.log(e.currentTarget.value, e.key);
+            if (e.key === 'Enter') {
+              const query = e.currentTarget.value.trim();
+            }
+          }}
           type="text"
           placeholder="Search"
           className={twJoin(

@@ -4,12 +4,12 @@ const FacebookStrategy = require("passport-facebook").Strategy;
 passport.use(
   new FacebookStrategy(
     {
-      clientID: process.env.FACEBOOK_APP_ID,
-      clientSecret: process.env.FACEBOOK_APP_SECRET,
+      clientID: process.env.FACEBOOK_CID,
+      clientSecret: process.env.FACEBOOK_CIS,
       callbackURL: "http://localhost:5000/api/auth/facebook/callback",
     },
     function (accessToken, refreshToken, profile, cb) {
-      done(null, {
+      cb(null, {
         id: profile.id,
         name: profile.displayName,
         picture: null,

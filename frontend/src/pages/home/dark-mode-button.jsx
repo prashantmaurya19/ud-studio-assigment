@@ -4,11 +4,15 @@ import { twMerge } from "tailwind-merge";
 /**
  * @param {{darkMode:boolean,toggleDarkMode:function():void}&JSXProps} p
  */
-const DarkModeButton = ({ darkMode, toggleDarkMode, className }) => {
+const DarkModeButton = ({ toggleDarkMode, className }) => {
+  const darkMode = document.documentElement.classList.contains("dark");
   return (
     <div className={twMerge("relative aspect-square", className)}>
       <button
-        onClick={toggleDarkMode}
+        onClick={() => {
+          localStorage.setItem("dark", !darkMode + "");
+          toggleDarkMode();
+        }}
         className={joinTWClass(
           "absolute w-full h-full p-2",
           "rounded-full hover:bg-gray-200 dark:hover:bg-gray-700",
@@ -55,4 +59,3 @@ const DarkModeButton = ({ darkMode, toggleDarkMode, className }) => {
 };
 
 export default DarkModeButton;
-

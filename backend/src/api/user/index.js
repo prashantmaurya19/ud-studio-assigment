@@ -1,4 +1,5 @@
 const e = require("express");
+const { UserHistory, TokenHistory } = require("../../db/models");
 const r = e.Router();
 
 function isLoggedIn(req, res, next) {
@@ -23,5 +24,6 @@ r.get("/logout", (req, res) => {
     res.sendStatus(200);
   });
 });
+
 
 module.exports = r;

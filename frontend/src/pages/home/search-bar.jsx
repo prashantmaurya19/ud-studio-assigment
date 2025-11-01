@@ -23,7 +23,7 @@ const SearchBar = ({ darkMode, ...a }) => {
             "transition-all duration-200",
             "dark:bg-gray-800 dark:text-gray-200 dark:border-white dark:placeholder-gray-400",
             "bg-white text-gray-700 border-gray-700 placeholder-gray-500",
-            "border-1 border-solid",
+            "border border-solid",
             "focus:dark:shadow-blue-500/20",
             "focus:border-blue-500 focus:shadow-lg focus:shadow-blue-500/30",
             "focus:outline-none focus:ring-2",

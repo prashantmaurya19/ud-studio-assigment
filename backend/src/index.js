@@ -6,6 +6,7 @@ const api_route = require("./api");
 require("dotenv").config();
 
 require("./oauth");
+require("./db");
 
 const app = e();
 const port = process.env.PORT || 5000;

@@ -13,24 +13,15 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +21 src/index.js
-badd +1 .pnp.cjs
-badd +0 .env
-badd +5 src/api/index.js
-badd +8 src/api/user/index.js
-badd +7 src/util/file/index.js
-badd +5 src/api/auth/index.js
-badd +11 src/api/auth/google/index.js
-badd +17 src/oauth/google/index.js
-badd +4 src/oauth/index.js
-badd +8 src/util/route/index.js
-badd +3 src/api/auth/github/index.js
-badd +9 src/oauth/github/index.js
-badd +35 ~/Documents/linux-dotfiles/nvim/.config/nvim/lua/plugins/telescope.lua
-badd +127 ~/Documents/linux-dotfiles/nvim/.config/nvim/pm_user/lua/pm_user/remaps.lua
+badd +9 src/db/index.js
+badd +37 src/api/user/index.js
+badd +1 src/db/models
+badd +2 src/db/models/index.js
+badd +2 api-info.json
+badd +3 src/db/schema/index.js
 argglobal
 %argdel
-edit src/oauth/index.js
+edit src/api/user/index.js
 let s:save_splitbelow = &splitbelow
 let s:save_splitright = &splitright
 set splitbelow splitright
@@ -60,20 +51,20 @@ setlocal foldnestmax=20
 setlocal foldenable
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 4 - ((3 * winheight(0) + 19) / 38)
+let s:l = 37 - ((18 * winheight(0) + 19) / 38)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 4
-normal! 0
+keepjumps 37
+normal! 025|
 lcd ~/Documents/coding/Ud-Studios-Assignment/backend
 wincmd w
 argglobal
-if bufexists(fnamemodify("~/Documents/coding/Ud-Studios-Assignment/backend/src/oauth/github/index.js", ":p")) | buffer ~/Documents/coding/Ud-Studios-Assignment/backend/src/oauth/github/index.js | else | edit ~/Documents/coding/Ud-Studios-Assignment/backend/src/oauth/github/index.js | endif
+if bufexists(fnamemodify("~/Documents/coding/Ud-Studios-Assignment/backend/src/db/schema/index.js", ":p")) | buffer ~/Documents/coding/Ud-Studios-Assignment/backend/src/db/schema/index.js | else | edit ~/Documents/coding/Ud-Studios-Assignment/backend/src/db/schema/index.js | endif
 if &buftype ==# 'terminal'
-  silent file ~/Documents/coding/Ud-Studios-Assignment/backend/src/oauth/github/index.js
+  silent file ~/Documents/coding/Ud-Studios-Assignment/backend/src/db/schema/index.js
 endif
-balt ~/Documents/coding/Ud-Studios-Assignment/backend/src/api/auth/github/index.js
+balt ~/Documents/coding/Ud-Studios-Assignment/backend/src/db/models/index.js
 setlocal foldmethod=manual
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -89,9 +80,10 @@ if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
 keepjumps 6
-normal! 0
+normal! 018|
 lcd ~/Documents/coding/Ud-Studios-Assignment/backend
 wincmd w
+2wincmd w
 exe 'vert 1resize ' . ((&columns * 79 + 79) / 159)
 exe 'vert 2resize ' . ((&columns * 79 + 79) / 159)
 tabnext 1
