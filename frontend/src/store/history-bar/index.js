@@ -3,7 +3,6 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   history: [],
-  index:{},
 };
 
 export const historyBarSlice = createSlice({
@@ -11,17 +10,21 @@ export const historyBarSlice = createSlice({
   initialState,
   reducers: {
     setHistory(state, action) {
-      state.history = action.payload.sort(
+      state.history = [];
+      for (const his of action.payload) {
+        for (const createdOn of his.createdOn) {
+          state.history.push({
+            query: his.query,
+            createdOn,
+          });
+        }
+      }
+      state.history.sort(
         (a, b) => new Date(b.createdOn) - new Date(a.createdOn),
       );
-      state.index = {};
-      state.history.forEach((item, idx) => {
-        state.index[item.query] = idx;
-      });
     },
     pushHistory(state, action) {
-      console.log(state.index,state.index[action.payload.query]);
-      if (state.index[action.payload.query]==undefined) state.history.unshift(action.payload);
+      state.history.unshift(action.payload);
     },
   },
 });

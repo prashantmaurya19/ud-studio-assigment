@@ -4,7 +4,7 @@ services:
     depends_on:
       - db
     environment:
-      MONGODB_CONNECT_URL: mongodb://db:27017/udstudio
+      MONGODB_CONNECT_URL: mongodb://db:27017/ud-studios
     ports:
       - "5000:5000"
     networks:
@@ -18,12 +18,12 @@ services:
     #   MONGO_INITDB_ROOT_USERNAME: admin
     #   MONGO_INITDB_ROOT_PASSWORD: password
     volumes:
-      - mongodb_data:/data/db # Persist data in a named volume
-    restart: always # Always restart the container if it stops
+      - data:/data/userdb 
+    restart: always 
     networks:
       - appnet
 volumes:
-  mongodb_data:
+  data:
 networks:
   appnet:
     driver: bridge

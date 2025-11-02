@@ -7,7 +7,7 @@ const UserHistorySchema = new mongoose.Schema({
     require: true,
   },
   search_count: { type: Number, default: 0 },
-  createdOn: { type: Date, default: Date.now },
+  createdOn: { type: [Date] },
 });
 
 module.exports = {

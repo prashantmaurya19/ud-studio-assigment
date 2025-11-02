@@ -1,10 +1,7 @@
 const e = require("express");
 const { routeByDir } = require("../util/route");
 const { UserHistory } = require("../db/models");
-const {
-  searchPhotos,
-  searchPhotosByParamerterObject,
-} = require("../util/unsplash");
+const { searchPhotosByParamerterObject } = require("../util/unsplash");
 const r = e.Router();
 
 routeByDir(r, "api");
@@ -28,12 +25,17 @@ function isLoggedIn(req, res, next) {
 r.get("/search", isLoggedIn, async (req, res) => {
   if (req.query.query == undefined) {
     res.sendStatus(400);
-  } else {
+    return;
+  }
+  // console.log("search/", req.query.x_ud_search);
+  if (req.query.x_ud_search == undefined) {
+    const now = new Date();
     await UserHistory.findOneAndUpdate(
       { query: req.query.query },
       {
         $inc: { search_count: 1 },
         $addToSet: { user_ids: req.user.id },
+        $push: { createdOn: now },
       },
       {
         upsert: true,
@@ -41,8 +43,8 @@ r.get("/search", isLoggedIn, async (req, res) => {
         runValidators: true,
       },
     );
-    res.send(await searchPhotosByParamerterObject(req.query));
   }
+  res.send(await searchPhotosByParamerterObject(req.query));
 });
 
 r.get("/history", isLoggedIn, async (req, res) => {

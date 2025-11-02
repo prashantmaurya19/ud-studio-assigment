@@ -29,7 +29,7 @@ export function SearchGrid() {
         "min-h-[300px]",
         "max-h-[calc(100vh-12rem)]", // Maximum height with room for header
         "bg-yellow-50 dark:bg-gray-800",
-        "border border-amber-600 dark:border-gray-700",
+        "border border-amber-600 dark:border-gray-500",
         "shadow-lg",
         "rounded-2xl",
         "overflow-hidden",
@@ -117,7 +117,7 @@ export function SearchGrid() {
               onClick={(e) => {
                 if (page_no >= total_pages) return;
                 fetch(
-                  `/api/search/?page=${page_no + 1}&query=${localStorage.getItem("last_query")}`,
+                  `/api/search/?x_ud_search=no&page=${page_no + 1}&query=${localStorage.getItem("last_query")}`,
                 )
                   .then((response) => response.json())
                   .then((data) => {
