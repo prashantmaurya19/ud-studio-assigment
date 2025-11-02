@@ -2,7 +2,7 @@
   "name": "backend",
   "scripts": {
     "start": "node ./src/index.js",
-    "dev": "nodemon ./src/"
+    "dev": "nodemon ./src/ --ignore public/"
   },
   "packageManager": "yarn@4.9.1",
   "dependencies": {

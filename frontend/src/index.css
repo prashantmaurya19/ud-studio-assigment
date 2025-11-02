@@ -4,7 +4,18 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
+  --font-mono_trust_display: "Momo Trust Display";
   --font-hollow: "Bungee Outline", cursive;
+  --color-wheat-50: #fefbf6;
+  --color-wheat-100: #faf3e3;
+  --color-wheat-200: #f5e5c5;
+  --color-wheat-300: #f0d5a1;
+  --color-wheat-400: #e9c27c;
+  --color-wheat-500: #e2af57;
+  --color-wheat-600: #c99438;
+  --color-wheat-700: #a6762c;
+  --color-wheat-800: #835c25;
+  --color-wheat-900: #6a4a20;
 }
 
 .debug {
@@ -28,3 +39,4 @@
   width: 100vw;
   height: 100vh;
 }
+

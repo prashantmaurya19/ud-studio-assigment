@@ -10,18 +10,6 @@ const UserHistorySchema = new mongoose.Schema({
   createdOn: { type: Date, default: Date.now },
 });
 
-const TokenHistorySchema = new mongoose.Schema({
-  token: {
-    type: String,
-    unique: true,
-  },
-  occure: {
-    type: Number,
-    default: 0,
-  },
-});
-
 module.exports = {
   UserHistorySchema,
-  TokenHistorySchema,
 };

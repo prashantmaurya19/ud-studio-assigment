@@ -9,11 +9,11 @@ const HistorySidebar = () => {
 
   return (
     <div
-      style={{ height: "86vh" }}
+      style={{ height: "84vh" }}
       className={twJoin(
         "w-[15%]",
-        "bg-white dark:bg-gray-800",
-        "border border-gray-300 dark:border-gray-700",
+        "bg-yellow-50 dark:bg-gray-800",
+        "border border-yellow-600 dark:border-gray-700",
         "shadow-lg",
         "rounded-2xl",
         "transition-all duration-200",
@@ -24,7 +24,7 @@ const HistorySidebar = () => {
       {/* History Header */}
       <div
         className={twJoin(
-          "px-6 py-4",
+          "px-6 py-4 bg",
           "border-b border-gray-300 dark:border-gray-700",
         )}
       >
@@ -54,10 +54,10 @@ const HistorySidebar = () => {
                 className={twJoin(
                   "px-6 py-3",
                   "text-gray-700 dark:text-gray-300",
-                  "hover:bg-[#ede7dd] dark:hover:bg-gray-800",
+                  "hover:bg-yellow-100 dark:hover:bg-gray-600",
                   "cursor-pointer",
                   "transition-colors duration-150",
-                  "group"
+                  "group",
                 )}
               >
                 <div className="text-sm">{query.query}</div>

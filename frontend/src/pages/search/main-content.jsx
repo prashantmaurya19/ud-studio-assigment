@@ -7,13 +7,13 @@ export function MainContent() {
     <div className={twJoin(
       "flex-1 h-full",
       "flex flex-col",
-      "bg-gray-50 dark:bg-gray-900",
+      "bg-amber-100 dark:bg-gray-900",
       "rounded-b-2xl",
-      "pt-5", // Add some top padding
+      "pt-1", // Add some top padding
     )}>
       <SearchBanner />
       <div className={twJoin(
-        "w-full flex-1",
+        "w-full grow-1",
       )}>
         <SearchGrid />
       </div>

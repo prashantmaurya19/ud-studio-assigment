@@ -11,6 +11,7 @@ import HistorySidebar from "@ud/components/HistorySidebar";
 import { useDispatch } from "react-redux";
 import { setHistory } from "@ud/store/history-bar";
 import { MainContent } from "./main-content";
+import { TopSearches } from "./top-searches";
 
 export function SearchPage() {
   const [darkMode, setDarkMode] = useState(false);
@@ -51,6 +52,7 @@ export function SearchPage() {
         )}
       >
         <div className="w-full h-full flex justify-center items-center flex-col">
+          <TopSearches />
           <Navbar>
             {/*left side navbar*/}
             <div
@@ -99,7 +101,7 @@ export function SearchPage() {
             className={twJoin(
               "h-[95%] gap-1 w-full",
               "flex justify-start items-start",
-              "p-4",
+              "p-2",
             )}
           >
             {/* Main content area */}

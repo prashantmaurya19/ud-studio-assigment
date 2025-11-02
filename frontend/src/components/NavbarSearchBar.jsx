@@ -19,6 +19,7 @@ const NavbarSearchBar = () => {
       );
       dispatch(setQuery(current_query));
       setSearchQuery("");
+      localStorage.setItem("last_query",encodeURIComponent(current_query));
       fetch(`/api/search/?query=${encodeURIComponent(current_query)}`)
         .then((response) => response.json()).then((data) => {
           console.log("Search results:", data);

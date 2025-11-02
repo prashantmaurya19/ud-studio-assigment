@@ -11,16 +11,16 @@ const Navbar = ({ children, className = "" }) => {
         joinTWClass(
           "w-[95%] h-[7%]",
           "relative",
-	  "border-solid border-2",
+          "border-solid border-2",
           "dark:border-white",
-          "bg-gray-800",
-	  "backdrop:blur-3xl",
+          "border-yellow-500",
+          "backdrop:blur-3xl",
           "dark:bg-white/5",
-          "bg-gray-800/10",
+          "bg-wheat-100",
           "z-50 px-4 py-2",
           "rounded-[100px]",
           "flex justify-start items-start gap-2",
-          "mt-2",
+          "mt-1",
         ),
         className,
       )}
@@ -31,4 +31,3 @@ const Navbar = ({ children, className = "" }) => {
 };
 
 export default Navbar;
-

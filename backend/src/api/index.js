@@ -1,12 +1,22 @@
 const e = require("express");
 const { routeByDir } = require("../util/route");
-const { TokenHistory, UserHistory } = require("../db/models");
-const { searchPhotos } = require("../util/unsplash");
+const { UserHistory } = require("../db/models");
+const {
+  searchPhotos,
+  searchPhotosByParamerterObject,
+} = require("../util/unsplash");
 const r = e.Router();
 
 routeByDir(r, "api");
 r.get("/top-search", async (req, res) => {
-  res.send(await UserHistory.find({}));
+  const n = parseInt(req.query.n);
+  res.send(
+    await UserHistory.find({})
+      .sort({
+        search_count: -1,
+      })
+      .limit(!isNaN(n) && n > 0 ? n : 5),
+  );
 });
 function isLoggedIn(req, res, next) {
   if (req.user == undefined) {
@@ -16,12 +26,11 @@ function isLoggedIn(req, res, next) {
   }
 }
 r.get("/search", isLoggedIn, async (req, res) => {
-  const { query } = req.query;
-  if (query == undefined) {
+  if (req.query.query == undefined) {
     res.sendStatus(400);
   } else {
     await UserHistory.findOneAndUpdate(
-      { query },
+      { query: req.query.query },
       {
         $inc: { search_count: 1 },
         $addToSet: { user_ids: req.user.id },
@@ -32,7 +41,7 @@ r.get("/search", isLoggedIn, async (req, res) => {
         runValidators: true,
       },
     );
-    res.send(await searchPhotos(query));
+    res.send(await searchPhotosByParamerterObject(req.query));
   }
 });
 

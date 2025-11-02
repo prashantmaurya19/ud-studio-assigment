@@ -35,5 +35,7 @@ app.get(/^(?!.*api).*$/, function (req, res) {
 });
 
 app.listen(port, () => {
-  console.log(`Server running on http://localhost:${port}`);
+  console.log(`
+Server running on http://localhost:${port}
+connected db= ${process.env.MONGODB_CONNECT_URL}`);
 });
