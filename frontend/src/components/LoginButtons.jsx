@@ -1,7 +1,7 @@
 //@ts-nocheck
 import { useNavigate } from "react-router";
 import BaseButton from "./BaseButton";
-import { joinTWClass } from "@ud/util/tailwind";
+import { twJoin } from "tailwind-merge";
 
 const LoginButtons = () => {
   const navigate = useNavigate();
@@ -12,7 +12,7 @@ const LoginButtons = () => {
   };
   return (
     <div
-      className={joinTWClass(
+      className={twJoin(
         "flex flex-col",
         "space-y-3",
         "w-full",

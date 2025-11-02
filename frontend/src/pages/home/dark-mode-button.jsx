@@ -1,5 +1,4 @@
-import { joinTWClass } from "@ud/util/tailwind";
-import { twMerge } from "tailwind-merge";
+import { twJoin, twMerge } from "tailwind-merge";
 
 /**
  * @param {{darkMode:boolean,toggleDarkMode:function():void}&JSXProps} p
@@ -13,7 +12,7 @@ const DarkModeButton = ({ toggleDarkMode, className }) => {
           localStorage.setItem("dark", !darkMode + "");
           toggleDarkMode();
         }}
-        className={joinTWClass(
+        className={twJoin(
           "absolute w-full h-full p-2",
           "rounded-full hover:bg-gray-200 dark:hover:bg-gray-700",
           "border-1 border-solid dark:border-gray-200 border-gray-700",

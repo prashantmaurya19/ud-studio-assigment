@@ -1,10 +1,10 @@
-import { joinTWClass } from "@ud/util/tailwind";
+import { twJoin } from "tailwind-merge";
 
 const SignInButton = ({ onClick, className }) => {
   return (
     <button
       onClick={onClick}
-      className={joinTWClass(
+      className={twJoin(
         "w-max h-[90%]",
         "px-8 py-2.5",
         "rounded-full",
@@ -38,4 +38,3 @@ const SignInButton = ({ onClick, className }) => {
 };
 
 export default SignInButton;
-

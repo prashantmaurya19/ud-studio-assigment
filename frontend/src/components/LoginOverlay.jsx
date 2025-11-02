@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
-import { joinTWClass } from "@ud/util/tailwind";
 import LoginButtons from './LoginButtons';
+import { twJoin } from 'tailwind-merge';
 
 const LoginOverlay = ({ isVisible, onClose }) => {
   const overlayRef = useRef(null);
@@ -23,7 +23,7 @@ const LoginOverlay = ({ isVisible, onClose }) => {
 
   return (
     <div
-      className={joinTWClass(
+      className={twJoin(
         "fixed inset-0",
         "flex items-center justify-center",
         "bg-black/50",
@@ -33,7 +33,7 @@ const LoginOverlay = ({ isVisible, onClose }) => {
     >
       <div
         ref={overlayRef}
-        className={joinTWClass(
+        className={twJoin(
           "bg-white dark:bg-gray-800",
           "rounded-2xl",
           "p-8",
@@ -44,7 +44,7 @@ const LoginOverlay = ({ isVisible, onClose }) => {
           isVisible ? "scale-100" : "scale-95"
         )}
       >
-        <div className={joinTWClass(
+        <div className={twJoin(
           "space-y-6"
         )}>
           <div className="text-center">

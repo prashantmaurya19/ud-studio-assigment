@@ -1,5 +1,5 @@
-import { joinTWClass } from "@ud/util/tailwind";
 import { useState } from "react";
+import { twJoin } from "tailwind-merge";
 
 /**
  * @param {{darkMode:boolean}&JSXProps} p
@@ -17,7 +17,7 @@ const SearchBar = ({ darkMode, ...a }) => {
         <input
           type="text"
           placeholder="Search"
-          className={joinTWClass(
+          className={twJoin(
             "w-full px-5 py-3 pr-12",
             "rounded-full",
             "transition-all duration-200",
@@ -36,7 +36,7 @@ const SearchBar = ({ darkMode, ...a }) => {
           {...a}
         />
         <div
-          className={joinTWClass(`
+          className={twJoin(`
           absolute right-4 top-1/2 transform -translate-y-1/2
           transition-colors duration-200
           ${darkMode ? "text-gray-400" : "text-gray-500"}

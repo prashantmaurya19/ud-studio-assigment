@@ -1,5 +1,5 @@
 //@ts-nocheck
-import { joinTWClass } from "@ud/util/tailwind";
+import { twJoin } from "tailwind-merge";
 /**
  * @param {string} variant
  */
@@ -30,7 +30,7 @@ const BaseButton = ({
     <a
       {...a}
       // onClick={onClick}
-      className={joinTWClass(
+      className={twJoin(
         "flex items-center justify-center",
         "w-full px-6 py-3",
         "rounded-lg",

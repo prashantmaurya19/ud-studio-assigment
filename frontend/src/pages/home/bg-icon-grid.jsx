@@ -1,5 +1,5 @@
-import { joinTWClass } from "@ud/util/tailwind";
 import { FaSearch } from "react-icons/fa";
+import { twJoin } from "tailwind-merge";
 
 /**
  * @param {{rows:number,cols:number}&JSXProps} p
@@ -12,7 +12,7 @@ export function BgIconGrid({ rows = 10, cols = 10, ...a }) {
         gridTemplateColumns: `repeat(${cols},1fr)`,
         gridTemplateRows: `repeat(${rows},1fr)`,
       }}
-      className={joinTWClass(
+      className={twJoin(
         "absolute",
         "grid",
         "w-full h-full",
@@ -26,14 +26,14 @@ export function BgIconGrid({ rows = 10, cols = 10, ...a }) {
           res.push(
             <span
             key={i}
-              className={joinTWClass(
+              className={twJoin(
                 "w-full h-full",
                 "relative",
                 "flex items-center justify-center",
               )}
             >
               <FaSearch
-                className={joinTWClass(
+                className={twJoin(
                   "w-1/2 h-1/2",
                   "absolute",
                   "fill-gray-800",

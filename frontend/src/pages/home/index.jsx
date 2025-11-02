@@ -3,12 +3,12 @@ import { useState, useEffect } from "react";
 import SearchBar from "@ud/pages/home/search-bar";
 import DarkModeButton from "./dark-mode-button";
 import { Logo } from "./logo";
-import { joinTWClass } from "@ud/util/tailwind";
 import { BgIconGrid } from "./bg-icon-grid";
 import LoginOverlay from "../../components/LoginOverlay";
 import Navbar from "../../components/Navbar";
 import SignInButton from "../../components/SignInButton";
 import { useNavigate } from "react-router";
+import { twJoin } from "tailwind-merge";
 
 const HomePage = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -31,7 +31,7 @@ const HomePage = () => {
 
   return (
     <div
-      className={joinTWClass(
+      className={twJoin(
         "min-h-screen",
         "dark:bg-gray-800",
         "bg-white",
@@ -40,7 +40,7 @@ const HomePage = () => {
       )}
     >
       <div
-        className={joinTWClass(
+        className={twJoin(
           "absolute",
           "w-full h-full",
           "z-20",

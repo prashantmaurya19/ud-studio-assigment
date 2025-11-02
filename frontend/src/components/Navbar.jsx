@@ -1,5 +1,4 @@
-import { joinTWClass } from "@ud/util/tailwind";
-import { twMerge } from "tailwind-merge";
+import { twJoin, twMerge } from "tailwind-merge";
 
 /**
  * @param {JSXProps} p
@@ -8,7 +7,7 @@ const Navbar = ({ children, className = "" }) => {
   return (
     <nav
       className={twMerge(
-        joinTWClass(
+        twJoin(
           "w-[95%] h-[7%]",
           "relative",
           "border-solid border-2",
