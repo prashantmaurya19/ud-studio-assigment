@@ -13,7 +13,7 @@ passport.use(
       done(null, {
         id: profile.id,
         name: profile.displayName,
-        picture: profile._json.picture,
+        picture: profile._raw.picture,
         provider: profile.provider,
       });
     },

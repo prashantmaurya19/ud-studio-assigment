@@ -1,7 +1,15 @@
 # ud-studio-assignment
 -------------
 
-https://github.com/prashantmaurya19/ud-studio-assigment/blob/main/demo/demo.mp4
+
+https://github.com/user-attachments/assets/26ae8fa6-3f12-4e75-99fe-e1c0cb4b8e13
+
+
+
+https://github.com/user-attachments/assets/530c2593-a4cf-41d1-bdd0-9a841e383822
+
+#### Sorry for color flickering it is due to video compression 🥺
+
 # Installation
 
 ## With Docker 🐋
@@ -77,4 +85,120 @@ cd ./backend && yarn start
 ```
 **i  used above module creation patter for better code spliting and function extextions** 
 
+# curl Examples
 
+## Endpoint 1 : /api/top-search
+```bash
+# return 5 top-searchs
+curl http://localhost:5000/api/top-search
+
+# for 10 top-searches default is 5
+curl http://localhost:5000/api/top-search?n=10
+```
+### response
+```json
+[
+  {
+    "_id": "69087214bdf5f2a55d3c143e",
+    "query": "camping on hills",
+    "__v": 0,
+    "createdOn": [
+      "2025-11-03T09:12:52.869Z",
+      "2025-11-03T09:13:05.743Z",
+      "2025-11-03T09:13:09.447Z"
+    ],
+    "search_count": 3,
+    "user_ids": ["116686678645029658074"]
+  },
+  {
+    "_id": "690871e9bdf5f2a55d3c143b",
+    "query": "hero",
+    "__v": 0,
+    "createdOn": ["2025-11-03T09:12:09.350Z"],
+    "search_count": 1,
+    "user_ids": ["116686678645029658074"]
+  },.... more
+]
+```
+## Endpoint 2 : api/history
+```bash
+# for testing use test=y
+curl http://localhost:5000/api/history?test=y
+
+# connect.sid value found in browser after logging 
+# browserconsole > application > Cookies
+# replace connect.sid_value with actual value
+curl --cookie "connect.sid=<connect.sid_value>" http://localhost:5000/api/history
+```
+### response
+```json
+[
+  {
+    "_id": "69087214bdf5f2a55d3c143e",
+    "query": "camping on hills",
+    "__v": 0,
+    "createdOn": [
+      "2025-11-03T09:12:52.869Z",
+      "2025-11-03T09:13:05.743Z",
+      "2025-11-03T09:13:09.447Z"
+    ],
+    "search_count": 3,
+    "user_ids": ["116686678645029658074"]
+  },
+  {
+    "_id": "690871e9bdf5f2a55d3c143b",
+    "query": "hero",
+    "__v": 0,
+    "createdOn": ["2025-11-03T09:12:09.350Z"],
+    "search_count": 1,
+    "user_ids": ["116686678645029658074"]
+  },.... more
+]
+```
+## Endpoint 3 : /api/search/?query=query_value
+```bash
+# for testing use test=y
+# unsplace api "/search/photos" endpoint query parameter supported 
+# query parameter is must to pass
+curl 'http://localhost:5000/api/search/?query=bike%20on%20mountain&test=y'
+
+# connect.sid value found in browser after logging 
+# browserconsole > application > Cookies
+# replace connect.sid_value with actual value
+curl --cookie "connect.sid=<connect.sid_value>" http://localhost:5000/api/search/?query=skyscraper
+```
+### response
+
+```json
+{
+  "total": 10000,
+  "total_pages": 1000,
+  "results": [
+    {
+      "id": "PhYq704ffdA",
+      "created_at": "2017-02-06T18:36:51Z",
+      "updated_at": "2025-11-03T07:04:08Z",
+      "promoted_at": "2017-02-06T18:36:51Z",
+      "width": 6000,
+      "height": 4000,
+      "color": "#d9f3f3",
+      "urls": {
+        "raw": "url_to_image",
+        "full": "url_to_image",
+        "regular": "url_to_image",
+        "small": "url_to_image",
+        "thumb": "url_to_image",
+        "small_s3": "url_to_image"
+      },
+      "links": {
+        "self": "url_to_image",
+        "html": "url_to_image",
+        "download": "url_to_image",
+        "download_location": "url_to_image"
+      },
+      "likes": 5630,
+
+    } ... more
+  ]
+}
+```
