@@ -1,7 +1,9 @@
 # ud-studio-assignment
 -------------
 
-https://github.com/prashantmaurya19/ud-studio-assigment/blob/main/demo/demo.mp4
+https://github.com/user-attachments/assets/26ae8fa6-3f12-4e75-99fe-e1c0cb4b8e13
+
+
 # Installation
 
 ## With Docker 🐋
