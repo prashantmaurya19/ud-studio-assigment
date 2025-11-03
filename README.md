@@ -1,7 +1,7 @@
 # ud-studio-assignment
 -------------
 
-# demo images
+https://github.com/prashantmaurya19/ud-studio-assigment/blob/main/demo/demo.mp4
 # Installation
 
 ## With Docker 🐋
@@ -75,6 +75,6 @@ cd ./backend && yarn start
 	  - index.js|jsx
 	- ....
 ```
-**i  used above module creation patter for better code sliting and function extextions** 
+**i  used above module creation patter for better code spliting and function extextions** 
 
 
