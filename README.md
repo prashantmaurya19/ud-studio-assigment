@@ -7,7 +7,7 @@ https://github.com/user-attachments/assets/26ae8fa6-3f12-4e75-99fe-e1c0cb4b8e13
 
 https://github.com/user-attachments/assets/530c2593-a4cf-41d1-bdd0-9a841e383822
 
-
+#### Sorry for color flickering it is due to video compression 🥺
 
 # Installation
 
