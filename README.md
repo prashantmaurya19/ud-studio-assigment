@@ -1,4 +1,4 @@
-# ud-studio-assignment
+# image-searcher-unsplash 
 -------------
 
 
